@@ -21,22 +21,25 @@ export default function CategoriesItem() {
         };
 
         fetchCategories();
-    }, []); 
+    }, []);
 
     return (
         <div className="category-item">
             <div className="category-header">
                 <h1>Categories</h1>
+                <a href="/categories">
+                    <button>All categories</button>
+                </a>
             </div>
 
             <div className="category-list">
-                {categories.map((category) => (
-                    <a 
-                        key={category.id} 
-                        href={`/category/${category.id}`} 
+                {categories.slice(0, 4).map((category) => (
+                    <a
+                        key={category.id}
+                        href={`/category/${category.id}`}
                         className="category-item"
                     >
-                        <img src={`http://localhost:3333${category.image}`} alt="" className="img-ct"/>
+                        <img src={`http://localhost:3333${category.image}`} alt="" className="img-ct" />
                         <p className="title-ct">{category.title}</p>
                     </a>
                 ))}
