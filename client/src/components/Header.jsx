@@ -22,19 +22,7 @@ export default function Header() {
 
             </div>
 
-            <nav className="nav">
-                <div className="block-nav">
-                    <div className="cn-bl-nav">
-                        <h1>Amazing Discounts <br />
-                             on Garden Products!
-                        </h1>
-                        <a href="/products">
-                            <button className="btn-bl-nav">Check out</button>
-                        </a>
-                    </div>
-                </div>
-            </nav>
+            
         </header>
-
     )
 }
