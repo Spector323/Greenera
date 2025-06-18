@@ -1,0 +1,56 @@
+.contact-page {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+.co
+.info-block {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.info-block h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.info-block p {
+  font-size: 1.1rem;
+}
+
+.phone,
+.address {
+  width: calc(50% - 10px);
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 20px;
+}
+
+.socials,
+.working-hours {
+  width: calc(50% - 10px);
+  display: inline-block;
+  vertical-align: top;
+}
+
+.socials .social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.socials .social-icons a {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.map-container {
+  margin-top: 40px;
+}
+
+.map-container iframe {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}

@@ -1,0 +1,67 @@
+.contact-page {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.contact-page h1 {
+    font-weight: 700;
+    font-size: 70px;
+}
+
+.contact-cn {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; /* Расстояние между колонками */
+}
+
+.info-block {
+    background-color: #F1F3F4;
+    border-radius: 8px;
+    padding: 0 20px;
+    display: flex;
+    
+}
+
+.info-block h2 {
+    color: #8B8B8B;
+    font-weight: 500;
+    font-size: 22px;
+}
+
+.info-block p {
+    font-weight: 600;
+    font-size: 42px;
+}
+
+.phone,
+.address {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.socials,
+.working-hours {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.socials .social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.socials .social-icons a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.map-container {
+    margin-top: 40px;
+}
+
+.map-container iframe {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
