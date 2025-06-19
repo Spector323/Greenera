@@ -1,0 +1,42 @@
+/* src/pages/CategoriesPage/categories-page.css */
+.categories-page {
+    width: 1600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.category-header h1 {
+    font-weight: 700;
+    font-size: 64px;
+}
+
+.category-header button {
+    background-color: #fff;
+    width: 142px;
+    height: 36px;
+    border-radius: 10px;
+    color: #DDDDDD;
+    border: 1px solid #DDDDDD;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.category-header button:hover {
+    color: #282828;
+    border-color: #282828;
+}
+
+.category-list {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    gap: 34px;
+}

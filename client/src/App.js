@@ -1,18 +1,21 @@
-import { Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
-import Home from './pages/Home';
-import Categories from './pages/Categories';
-import Products from './pages/Products';
+import Home from './pages/Home/Home';
+import CategoriesPage from './pages/CategoriesPage/CategoriesPage';
+import ProductsPage from './pages/ProductsPage/ProductsPage';
+import SalePage from './pages/SalePage/SalePage';
+import Cart from './pages/Cart/Cart';
 
 function App() {
-    return (
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/categories" element={<Categories/>} />
-                <Route path="/products" element={<Products/>} />
-
-            </Routes>
-    )
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/categories" element={<CategoriesPage />} />
+      <Route path="/products" element={<ProductsPage />} />
+      <Route path="/sale" element={<SalePage />} />
+      <Route path="/cart" element={<Cart />} />
+    </Routes>
+  );
 }
 
 export default App;
