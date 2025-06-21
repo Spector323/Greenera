@@ -1,0 +1,16 @@
+.cart {
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+  }
+  
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .total {
+    font-weight: bold;
+    margin-top: 10px;
+  }

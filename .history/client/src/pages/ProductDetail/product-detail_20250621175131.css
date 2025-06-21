@@ -53,19 +53,19 @@
     font-weight: bold;
 }
 
-.old-price-2 {
+..old-price {
     text-decoration: line-through;
     color: #999;
     font-weight: 500;
-    font-size: 44px;
+    font-size: 24px;
     text-decoration: line-through;
 }
 
-.new-price-2 {
+.new-price {
     font-weight: bold;
     font-weight: 600;
     margin-right: 16px;
-    font-size: 58px;
+    font-size: 46px;
     color: #282828;
 }
 
