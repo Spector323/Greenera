@@ -5,7 +5,6 @@ import SalePage from '../SalePage/SalePage';
 import ContactPage from '../../components/ContactPage/ContactPage';
 import  './home.css';
 
-
 export default function Home() {
   return (
     <div className='home'>
@@ -26,7 +25,7 @@ export default function Home() {
       <CategoryCard />
       <OrderPage />
       <SalePage />
-      <ContactPage />
+      <ContactPage /> 
     </div>
   );
 }

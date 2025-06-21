@@ -4,7 +4,7 @@ import OrderPage from '../OrderPage/OrderPage';
 import SalePage from '../SalePage/SalePage';
 import ContactPage from '../../components/ContactPage/ContactPage';
 import  './home.css';
-
+import Footer from '../../components/Footer/Footer';
 
 export default function Home() {
   return (

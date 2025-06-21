@@ -37,7 +37,6 @@ export default function CategoriesPage() {
         ))}
       </div>
       <ContactPage />
-      
     </div>
   );
 }

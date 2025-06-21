@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Header from '../../components/Header/Header';
 import ContactPage from '../../components/ContactPage/ContactPage';
 import ProductCard from '../../components/ProductCard/ProductCard';
-import './products.css'; 
+import './products.css';
 import { useGetProductsQuery } from '../../store/api';
 
 export default function ProductsPage() {
@@ -51,54 +51,56 @@ export default function ProductsPage() {
   return (
     <div className='products'>
       <Header />
-      <h1>All products</h1>
+      <div className="cn-products">
+        <h1>All products</h1>
 
-      <div className='filters'>
-        <div className='filter'>
-          <label>Price</label>
-          <input
-            type="number"
-            name="minPrice"
-            placeholder="from"
-            value={filters.minPrice}
-            onChange={handleFilterChange}
-          />
-          <input
-            type="number"
-            name="maxPrice"
-            placeholder="to"
-            value={filters.maxPrice}
-            onChange={handleFilterChange}
-          />
-        </div>
-
-        <div className='filter'>
-          <label>
-            Discounted items
+        <div className='filters'>
+          <div className='filter price'>
+            <label>Price</label>
             <input
-              type="checkbox"
-              name="onlyDiscounted"
-              checked={filters.onlyDiscounted}
+              type="number"
+              name="minPrice"
+              placeholder="from"
+              value={filters.minPrice}
               onChange={handleFilterChange}
             />
-          </label>
+            <input
+              type="number"
+              name="maxPrice"
+              placeholder="to"
+              value={filters.maxPrice}
+              onChange={handleFilterChange}
+            />
+          </div>
+
+          <div className='filter discount'>
+            <label>
+              Discounted items
+              <input
+                type="checkbox"
+                name="onlyDiscounted"
+                checked={filters.onlyDiscounted}
+                onChange={handleFilterChange}
+              />
+            </label>
+          </div>
+
+          <div className='filter sort'>
+            <label>Sorted:</label>
+            <select name="sortBy" value={filters.sortBy} onChange={handleFilterChange}>
+              <option value="default">by default</option>
+              <option value="priceAsc">price: high-low</option>
+              <option value="priceDesc">price: low-high</option>
+              <option value="discount">newest</option>
+            </select>
+          </div>
         </div>
 
-        <div className='filter'>
-          <label>Sorted:</label>
-          <select name="sortBy" value={filters.sortBy} onChange={handleFilterChange}>
-            <option value="default">by default</option>
-            <option value="priceAsc">price: high-low</option>
-            <option value="priceDesc">price: low-high</option>
-            <option value="discount">newest</option>
-          </select>
+        <div className='product-grid'>
+          {sortedProducts.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
         </div>
-      </div>
-
-      <div className='product-grid'>
-        {sortedProducts.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
       </div>
       <ContactPage />
     </div>

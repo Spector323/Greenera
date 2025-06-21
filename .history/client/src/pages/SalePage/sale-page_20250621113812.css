@@ -43,6 +43,7 @@
 
 .product-card {
     text-decoration: none;
+    width: calc(25% - 25px);
     background-color: #fff;
     border-radius: 20px;
     overflow: hidden;

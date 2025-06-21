@@ -2,10 +2,14 @@
     width: 1600px;
     margin: 0 auto;
     padding: 0;
+    
 }
-
-.products h1 {
-    margin-top: 150px;
+.cn-products{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.cn-products h1 {
     font-weight: 700;
     font-size: 64px;
 }
@@ -62,7 +66,9 @@
 
 /* ////////////////////////////////////////////////////////////////////////////////////// */
 .product-grid {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
     align-items: center;
     justify-content: space-between;
     gap: 30px;
