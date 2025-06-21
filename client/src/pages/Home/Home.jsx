@@ -1,9 +1,9 @@
 import Header from '../../components/Header/Header';
-import CategoryCard from '../../components/CategoryCard/CategoryCard';
 import OrderPage from '../OrderPage/OrderPage';
-import SalePage from '../SalePage/SalePage';
 import ContactPage from '../../components/ContactPage/ContactPage';
 import  './home.css';
+import SalePage from '../../components/SalePage/SalePage';
+import CategoriesCard from '../../components/CategoriesCard/CategoriesCard';
 
 
 export default function Home() {
@@ -23,9 +23,9 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <CategoryCard />
+      <CategoriesCard />
       <OrderPage />
-      <SalePage />
+      <SalePage/>
       <ContactPage />
     </div>
   );

@@ -13,7 +13,7 @@ export default function Header() {
           <Link to="/">Main Page</Link>
           <Link to="/categories">Categories</Link>
           <Link to="/products">All products</Link>
-          <Link to="/sale">All sales</Link>
+          <Link to="/sales">All sales</Link>
         </div>
 
         <Link to="/cart">

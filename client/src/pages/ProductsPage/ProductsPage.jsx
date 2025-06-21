@@ -1,21 +1,18 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Header from '../../components/Header/Header';
 import ContactPage from '../../components/ContactPage/ContactPage';
 import ProductCard from '../../components/ProductCard/ProductCard';
-import './products.css';
+import './products-page.css';
 import { useGetProductsQuery } from '../../store/api';
 
 export default function ProductsPage() {
-  const { data: products = [], isLoading, error } = useGetProductsQuery();
+  const { data: products = [] } = useGetProductsQuery();
   const [filters, setFilters] = useState({
     minPrice: '',
     maxPrice: '',
     onlyDiscounted: false,
     sortBy: 'default',
   });
-
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
 
   const handleFilterChange = (e) => {
     const { name, value, type, checked } = e.target;

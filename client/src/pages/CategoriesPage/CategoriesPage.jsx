@@ -1,43 +1,35 @@
+import React from 'react';
 import Header from '../../components/Header/Header';
 import ContactPage from '../../components/ContactPage/ContactPage';
-import { Link } from 'react-router-dom';
-import  './categories-page.css';
-import { useGetCategoriesQuery } from '../../store/api';
+import ProductCard from '../../components/ProductCard/ProductCard';
+import { useParams } from 'react-router-dom';
+import { useGetProductsByCategoryQuery } from '../../store/api';
+import './categories-page.css';
 
 export default function CategoriesPage() {
-  const { data: categories = [], isLoading, error } = useGetCategoriesQuery();
+  const { id } = useParams();
+  const { data: categoryResponse = {}, isLoading, error } = useGetProductsByCategoryQuery(id);
+
+  console.log('Category Response:', categoryResponse);
 
   if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
+  if (error) return <div>Error: {error.toString()}</div>;
+
+  const categoryProducts = categoryResponse.data || [];
+  const categoryTitle = categoryResponse.category?.title || 'Categories';
 
   return (
-    <div className='category-item'>
+    <div className="categories-page">
       <Header />
-      <div className='category-header'>
-        <h1>Categories</h1>
-        <Link to="/categories">
-          <button>All categories</button>
-        </Link>
+      <div className="categories-header">
+        <h1>{categoryTitle}</h1>
       </div>
-
-      <div className='category-list'>
-        {categories.map((category) => (
-          <Link
-            key={category.id}
-            to={`/category/${category.id}`}
-            className='category-item'
-          >
-            <img
-              src={`http://localhost:3333${category.image}`}
-              alt=""
-              className='img-ct'
-            />
-            <p className='title-ct'>{category.title}</p>
-          </Link>
+      <div className="product-grid">
+        {categoryProducts.map((product) => (
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
       <ContactPage />
-      
     </div>
   );
 }

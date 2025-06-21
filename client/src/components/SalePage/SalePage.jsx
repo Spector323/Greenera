@@ -1,13 +1,11 @@
 import { Link } from 'react-router-dom';
 import './sale-page.css';
-import ProductCard from '../../components/ProductCard/ProductCard';
+import ProductCard from '../ProductCard/ProductCard';
 import { useGetProductsQuery } from '../../store/api';
 
 export default function SalePage() {
-  const { data: products = [], isLoading, error } = useGetProductsQuery();
+  const { data: products = []} = useGetProductsQuery();
 
-  if (isLoading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
 
   const discountedProducts = products
     .filter((product) => product.discont_price)
@@ -18,7 +16,7 @@ export default function SalePage() {
     <div className='sale-page'>
       <div className='sale-header'>
         <h2>Sale</h2>
-        <Link to="/sale">
+        <Link to="/sales">
           <button className='all-sales-button'>All sales</button>
         </Link>
       </div>

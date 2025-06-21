@@ -1,22 +1,17 @@
-.categories-page {
+.categories-item {
     width: 1600px;
     margin: 0 auto;
-    padding: 20px;
 }
-
-.categories-header {
+.categories-header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
 }
-
 .categories-header h1 {
     font-weight: 700;
     font-size: 64px;
 }
-
-.categories-header button {
+.categories-header button{
     background-color: #fff;
     width: 142px;
     height: 36px;
@@ -26,16 +21,32 @@
     cursor: pointer;
     transition: all 0.3s ease;
 }
-
-.categories-header button:hover {
+.categories-header button:hover{
     color: #282828;
     border-color: #282828;
 }
-
 .categories-list {
     display: flex;
     align-items: center;
     text-align: center;
     justify-content: space-between;
     gap: 34px;
+}
+.categories-list a{
+    text-decoration: none;
+
+}
+.title-ct {
+    font-weight: 500;
+    font-size: 20px;
+    color: #282828;
+}
+.title-ct:hover {
+    color: #339933;
+}
+
+.img-ct {
+    width: 100%;
+    height: 380px;
+    border-radius: 20px;
 }

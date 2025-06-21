@@ -9,6 +9,14 @@ export const api = createApi({
     getProducts: builder.query({
       query: () => '/products/all',
     }),
+    getProductsByCategory: builder.query({
+      query: (id) => `/categories/${id}`,
+      transformResponse: (response) => response, // Возвращаем весь объект { category, data }
+    }),
+    getProductById: builder.query({
+      query: (id) => `/products/${id}`,
+      transformResponse: (response) => response,
+    }),
     sendOrder: builder.mutation({
       query: (body) => ({
         url: '/sale/send',
@@ -23,4 +31,6 @@ export const {
   useGetCategoriesQuery,
   useGetProductsQuery,
   useSendOrderMutation,
+  useGetProductsByCategoryQuery,
+  useGetProductByIdQuery, // Новый хук
 } = api;

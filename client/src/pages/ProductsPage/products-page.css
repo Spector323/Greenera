@@ -68,11 +68,7 @@
 .product-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-    flex-wrap: wrap;
+    gap: 25px;
 }
 
 .product-title-2 {
@@ -90,20 +86,9 @@
     color: #339933;
 }
 
-.product-card:hover {
-    transform: translateY(-5px);
+.product-price{
+    font-size: 18px;
+    padding-top: 20px;
+    padding-bottom: 32px;
 }
 
-.add-to-cart-btn {
-    position: absolute;
-    margin-top: 10px;
-    padding: 8px 16px;
-    background-color: #339933;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.add-to-cart-btn:hover {
-    background-color: #0056b3;
-}

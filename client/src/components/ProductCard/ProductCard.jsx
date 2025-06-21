@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../store/cartSlice';
 import { Link } from 'react-router-dom';
-import  './product-card.css'; // Предполагается, что стили находятся в этом файле
+import './product-card.css'; // Предполагается, что стили находятся в этом файле
 
 export default function ProductCard({ product }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -14,11 +14,11 @@ export default function ProductCard({ product }) {
 
   const handleAddToCart = () => {
     dispatch(addToCart(product));
-    alert(`Added ${product.title} to cart!`); // Временное уведомление, можно заменить на модалку
+    alert(`Товар успешно добавлен`); // Временное уведомление, можно заменить на модалку
   };
 
   return (
-    <Link to={`/product/${product.id}`} className='product-card' onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+    <Link to={`/products/${product.id}`} className='product-card' onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
       {discountPercent && (
         <div className='discount-badge'>-{discountPercent}%</div>
       )}
@@ -44,11 +44,9 @@ export default function ProductCard({ product }) {
         <button
           className='add-to-cart-btn'
           onClick={(e) => {
-            e.preventDefault(); // Предотвращаем переход по ссылке
+            e.preventDefault();
             handleAddToCart();
           }}
-          onMouseEnter={(e) => (e.target.style.backgroundColor = '#45a049')}
-          onMouseLeave={(e) => (e.target.style.backgroundColor = '#4CAF50')}
         >
           Add to cart
         </button>
